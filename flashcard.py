@@ -18,7 +18,7 @@ import json
 from datetime import datetime, timedelta
 
 try:
-    from models.word import Word
+    from word import Word
 except ImportError:  # allows running this file directly, e.g. `python flashcard.py`
     from word import Word
 
