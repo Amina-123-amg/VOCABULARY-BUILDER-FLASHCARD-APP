@@ -17,6 +17,8 @@ Set your API key as an environment variable:
 
 Do NOT put the real API key directly in this file.
 """
+from dotenv import load_dotenv
+load_dotenv()  # Load environment variables from .env file
 
 import json
 import os
@@ -34,7 +36,7 @@ class GeminiError(Exception):
 class GeminiClient:
     """Handles all communication between the app and Gemini AI."""
 
-    MODEL = "gemini-2.5-flash"
+    MODEL = "gemini-3.6-flash"
 
     def __init__(self, api_key: str | None = None):
         # Use the supplied key first, otherwise use GEMINI_API_KEY.
