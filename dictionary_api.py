@@ -2,7 +2,7 @@ import requests
 from typing import List
 
 from exceptions import APIError, EmptyInputError, WordNotFoundError
-from models import Word, clean_text
+from models import Word 
 
 
 class DictionaryClient:
@@ -62,9 +62,9 @@ class DictionaryClient:
             antonyms.extend(meaning.get("antonyms", []))
             for d in meaning.get("definitions", []):
                 if d.get("definition"):
-                    definitions.append(clean_text(d["definition"]))
+                    definitions.append((d["definition"].strip()))
                 if d.get("example"):
-                    examples.append(clean_text(d["example"]))
+                    examples.append(d["example"].strip())
                 synonyms.extend(d.get("synonyms", []))
                 antonyms.extend(d.get("antonyms", []))
 
