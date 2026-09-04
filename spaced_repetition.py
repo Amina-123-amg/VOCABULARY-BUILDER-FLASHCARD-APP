@@ -1,96 +1,42 @@
-from datetime import datetime, date, timedelta
-from typing import List, Dict, Any, Optional
+from datetime import date, timedelta
+from typing import Any, Optional
 
 class SpacedRepetitionService:
-    """
-    Handles spaced repetition scheduling logic for flashcard reviews.
-    """
-
-    INTERVAL_MAP = {
-        "again": 0,  # Due today / immediately
-        "hard": 1,   # Due in 1 day
-        "good": 3,   # Due in 3 days
-        "easy": 7    # Due in 7 days
-    }
+    INTERVAL_MAP = {"again": 0, "hard": 1, "good": 3, "easy": 7}
 
     @staticmethod
-    def calculate_next_review(difficulty: str, current_date: Optional[date] = None) -> Dict[str, Any]:
-        """
-        Calculates the next review date and interval based on user rating.
-        
-        :param difficulty: 'again', 'hard', 'good', or 'easy'
-        :param current_date: Optional base date (defaults to today)
-        :return: Dictionary containing 'next_review' (ISO date string) and 'interval' (int days)
-        """
-        rating = difficulty.lower().strip()
+    def calculate_next_review(rating: str, current_date: Optional[date] = None):
+        rating = rating.lower().strip()
         if rating not in SpacedRepetitionService.INTERVAL_MAP:
-            raise ValueError(f"Invalid difficulty rating '{difficulty}'. Choose from: again, hard, good, easy.")
-
-        base_date = current_date if current_date else date.today()
-        days_to_add = SpacedRepetitionService.INTERVAL_MAP[rating]
-        
-        next_review_date = base_date + timedelta(days=days_to_add)
-
-        return {
-            "interval": days_to_add,
-            "next_review": next_review_date.isoformat()
-        }
+            raise ValueError("Rating must be again, hard, good, or easy.")
+        base = current_date or date.today()
+        days = SpacedRepetitionService.INTERVAL_MAP[rating]
+        return {"interval": days, "next_review": (base + timedelta(days=days)).isoformat()}
 
     @staticmethod
-    def get_due_cards(flashcards: List[Any], current_date: Optional[date] = None) -> List[Any]:
-        """
-        Filters a list of Flashcard objects or dicts to return only those due for review.
-        
-        :param flashcards: List of Flashcard objects or dictionary representations
-        :param current_date: Optional comparison date (defaults to today)
-        :return: List of due flashcards
-        """
-        today = current_date if current_date else date.today()
-        due_cards = []
-
+    def get_due_cards(flashcards, current_date: Optional[date] = None):
+        today = current_date or date.today()
+        due = []
         for card in flashcards:
-            # Extract next_review whether card is a dict or a class instance
-            if isinstance(card, dict):
-                next_review_str = card.get("next_review")
-            else:
-                next_review_str = getattr(card, "next_review", None)
-
-            if not next_review_str:
-                # If no date is set, consider it due for review immediately
-                due_cards.append(card)
-                continue
-
+            due_value = card.get("due_date") if isinstance(card, dict) else getattr(card, "due_date", None)
             try:
-                review_date = datetime.strptime(next_review_str, "%Y-%m-%d").date()
-                if review_date <= today:
-                    due_cards.append(card)
+                if not due_value or date.fromisoformat(due_value) <= today:
+                    due.append(card)
             except ValueError:
-                # Fallback in case of malformed date strings
-                due_cards.append(card)
-
-        return due_cards
+                due.append(card)
+        return due
 
     @staticmethod
-    def update_review(flashcard: Any, rating: str, file_manager: Optional[Any] = None) -> Any:
-        """
-        Updates the flashcard's review schedule and optionally saves it via FileManager.
-        
-        :param flashcard: Flashcard object or dictionary
-        :param rating: User's review rating ('again', 'hard', 'good', 'easy')
-        :param file_manager: Optional instance of FileManager to persist data
-        :return: Updated flashcard instance or dict
-        """
+    def update_review(flashcard: Any, rating: str):
         schedule = SpacedRepetitionService.calculate_next_review(rating)
-
         if isinstance(flashcard, dict):
             flashcard["interval"] = schedule["interval"]
-            flashcard["next_review"] = schedule["next_review"]
+            flashcard["due_date"] = schedule["next_review"]
+            flashcard["repetitions"] = flashcard.get("repetitions", 0) + (1 if rating != "again" else 0)
+            flashcard["last_reviewed"] = date.today().isoformat()
         else:
-            setattr(flashcard, "interval", schedule["interval"])
-            setattr(flashcard, "next_review", schedule["next_review"])
-
-        # If file_manager reference is provided, execute save operation
-        if file_manager and hasattr(file_manager, "save_data"):
-            file_manager.save_data()
-
+            flashcard.interval = schedule["interval"]
+            flashcard.due_date = schedule["next_review"]
+            flashcard.repetitions += 1 if rating != "again" else 0
+            flashcard.last_reviewed = date.today().isoformat()
         return flashcard

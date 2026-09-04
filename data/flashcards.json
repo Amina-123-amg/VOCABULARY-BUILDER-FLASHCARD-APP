@@ -1,0 +1,12 @@
+{
+  "happy": {
+    "word": "happy",
+    "front": "happy",
+    "back": "A happy event, thing, person, etc.",
+    "ease_factor": 2.5,
+    "interval": 1,
+    "repetitions": 1,
+    "due_date": "2026-09-05",
+    "last_reviewed": "2026-09-04"
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "happy": {
+    "text": "happy",
+    "phonetic": "/ˈhæpiː/",
+    "definitions": [
+      {
+        "part_of_speech": "noun",
+        "definition": "A happy event, thing, person, etc.",
+        "example": "",
+        "synonyms": [],
+        "antonyms": []
+      },
+      {
+        "part_of_speech": "noun",
+        "definition": "Preceded by the: happy people as a group.",
+        "example": "",
+        "synonyms": [],
+        "antonyms": []
+      },
+      {
+        "part_of_speech": "verb",
+        "definition": "Often followed by up: to become happy; to brighten up, to cheer up.",
+        "example": "",
+        "synonyms": [
+          "happify"
+        ],
+        "antonyms": []
+      },
+      {
+        "part_of_speech": "verb",
+        "definition": "Often followed by up: to make happy; to brighten, to cheer, to enliven.",
+        "example": "",
+        "synonyms": [
+          "happify"
+        ],
+        "antonyms": []
+      },
+      {
+        "part_of_speech": "adjective",
+        "definition": "Having a feeling arising from a consciousness of well-being or of enjoyment; enjoying good of any kind, such as comfort, peace, or tranquillity; blissful, contented, joyous.",
+        "example": "Music makes me feel happy.",
+        "synonyms": [
+          "cheerful",
+          "content",
+          "delighted",
+          "elated",
+          "exultant",
+          "glad",
+          "joyful",
+          "jubilant",
+          "merry",
+          "orgasmic",
+          "fortunate",
+          "lucky",
+          "propitious"
+        ],
+        "antonyms": [
+          "inappropriate",
+          "inapt",
+          "unfelicitous",
+          "disenchanted",
+          "dissatisfied",
+          "blue",
+          "depressed",
+          "down",
+          "miserable",
+          "moody",
+          "morose",
+          "sad",
+          "unhappy",
+          "unfortunate",
+          "unlucky",
+          "unpropitious"
+        ]
+      },
+      {
+        "part_of_speech": "adjective",
+        "definition": "Experiencing the effect of favourable fortune; favored by fortune or luck; fortunate, lucky, propitious.",
+        "example": "",
+        "synonyms": [
+          "cheerful",
+          "content",
+          "delighted",
+          "elated",
+          "exultant",
+          "glad",
+          "joyful",
+          "jubilant",
+          "merry",
+          "orgasmic",
+          "fortunate",
+          "lucky",
+          "propitious"
+        ],
+        "antonyms": [
+          "inappropriate",
+          "inapt",
+          "unfelicitous",
+          "disenchanted",
+          "dissatisfied",
+          "blue",
+          "depressed",
+          "down",
+          "miserable",
+          "moody",
+          "morose",
+          "sad",
+          "unhappy",
+          "unfortunate",
+          "unlucky",
+          "unpropitious"
+        ]
+      },
+      {
+        "part_of_speech": "adjective",
+        "definition": "Content, satisfied (with or to do something); having no objection (to something).",
+        "example": "Are you happy to pay me back by the end of the week?",
+        "synonyms": [
+          "cheerful",
+          "content",
+          "delighted",
+          "elated",
+          "exultant",
+          "glad",
+          "joyful",
+          "jubilant",
+          "merry",
+          "orgasmic",
+          "fortunate",
+          "lucky",
+          "propitious"
+        ],
+        "antonyms": [
+          "inappropriate",
+          "inapt",
+          "unfelicitous",
+          "disenchanted",
+          "dissatisfied",
+          "blue",
+          "depressed",
+          "down",
+          "miserable",
+          "moody",
+          "morose",
+          "sad",
+          "unhappy",
+          "unfortunate",
+          "unlucky",
+          "unpropitious"
+        ]
+      },
+      {
+        "part_of_speech": "adjective",
+        "definition": "(Of acts, speech, etc.) Appropriate, apt, felicitous.",
+        "example": "a happy coincidence",
+        "synonyms": [
+          "cheerful",
+          "content",
+          "delighted",
+          "elated",
+          "exultant",
+          "glad",
+          "joyful",
+          "jubilant",
+          "merry",
+          "orgasmic",
+          "fortunate",
+          "lucky",
+          "propitious"
+        ],
+        "antonyms": [
+          "inappropriate",
+          "inapt",
+          "unfelicitous",
+          "disenchanted",
+          "dissatisfied",
+          "blue",
+          "depressed",
+          "down",
+          "miserable",
+          "moody",
+          "morose",
+          "sad",
+          "unhappy",
+          "unfortunate",
+          "unlucky",
+          "unpropitious"
+        ]
+      },
+      {
+        "part_of_speech": "adjective",
+        "definition": "(in combination) Favoring or inclined to use.",
+        "example": "slaphappy, trigger-happy",
+        "synonyms": [
+          "cheerful",
+          "content",
+          "delighted",
+          "elated",
+          "exultant",
+          "glad",
+          "joyful",
+          "jubilant",
+          "merry",
+          "orgasmic",
+          "fortunate",
+          "lucky",
+          "propitious"
+        ],
+        "antonyms": [
+          "inappropriate",
+          "inapt",
+          "unfelicitous",
+          "disenchanted",
+          "dissatisfied",
+          "blue",
+          "depressed",
+          "down",
+          "miserable",
+          "moody",
+          "morose",
+          "sad",
+          "unhappy",
+          "unfortunate",
+          "unlucky",
+          "unpropitious"
+        ]
+      },
+      {
+        "part_of_speech": "adjective",
+        "definition": "(of people, often followed by \"at\" or \"in\") Dexterous, ready, skilful.",
+        "example": "",
+        "synonyms": [
+          "cheerful",
+          "content",
+          "delighted",
+          "elated",
+          "exultant",
+          "glad",
+          "joyful",
+          "jubilant",
+          "merry",
+          "orgasmic",
+          "fortunate",
+          "lucky",
+          "propitious"
+        ],
+        "antonyms": [
+          "inappropriate",
+          "inapt",
+          "unfelicitous",
+          "disenchanted",
+          "dissatisfied",
+          "blue",
+          "depressed",
+          "down",
+          "miserable",
+          "moody",
+          "morose",
+          "sad",
+          "unhappy",
+          "unfortunate",
+          "unlucky",
+          "unpropitious"
+        ]
+      }
+    ],
+    "simple_explanation": "",
+    "ai_examples": [],
+    "memory_trick": ""
+  }
+}
